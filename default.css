@@ -49,10 +49,11 @@ body {
     color: #333;
 }
 
-/* Responsividade para dispositivos menores */
+/* Adicionando mais responsividade para dispositivos pequenos */
 @media (max-width: 600px) {
     #messages {
-        font-size: 1.5rem; /* Reduz o tamanho da fonte para telas pequenas */
+        font-size: 1.4rem; /* Ajuste de tamanho para telas menores */
+        line-height: 1.6; /* Melhor espaçamento entre linhas */
     }
 
     .signature {
@@ -61,12 +62,14 @@ body {
 
     #loveHeart {
         width: 100%; /* Preenche toda a largura em telas pequenas */
+        max-width: none; /* Remove limite de largura */
     }
 
-    #messages {
+    #message {
         font-size: 1.2rem; /* Ajuste de tamanho de fonte */
     }
 }
+
 #heartspan a {
     display: inline-block;
     transition: transform 0.3s ease-in-out;
@@ -78,13 +81,20 @@ body {
 }
 
 #icon {
-    font-size: 4rem; /* Aumenta o tamanho do coração */
+    font-size: 3.5rem; /* Ajusta tamanho do coração */
     color: #ff3b5c;
     cursor: pointer; /* Indica que é clicável */
 }
 
 #icon:active {
     transform: scale(0.9); /* Efeito ao pressionar o ícone */
+}
+
+/* Ajuste para o canvas */
+#garden {
+    max-height: 300px; /* Limita a altura máxima em telas menores */
+    max-width: 100%; /* Garante que não ultrapasse a largura */
+    margin: 0 auto; /* Centraliza o canvas */
 }
 
 #mainDiv {

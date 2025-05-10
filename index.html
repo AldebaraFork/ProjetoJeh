@@ -12,9 +12,9 @@
 </head>
 <body>
 
-<div id="mainDiv">
-  <div id="content">
-    <div id="code">
+<div id="mainDiv" style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;">
+  <div id="content" style="text-align: center; padding: 20px; width: 90%; max-width: 600px;">
+    <div id="code" style="margin-bottom: 20px;">
       <span class="comments">/**</span><br />
       <span class="space"/><span class="comments">* Meu pedido especial</span><br />
       <span class="space"/><span class="comments">*/</span><br />
@@ -27,8 +27,8 @@
       Com o tempo, acabamos nos afastando;<br />
       Com diferentes caminhos e experiências;<br />
       Mas eu não queria deixar você só passar pela minha vida;<br />
-      <span class="comments">// E se você deixar, eu quero que você seja mais que uma amiga .</span><br />
-      Alguem pra compartilhar experiências, compartilhar o love love, fazer um bulkingzão, vem ser o leg do meu press;<br />
+      <span class="comments">// E se você deixar, eu quero que você seja mais que uma amiga.</span><br />
+      Alguém pra compartilhar experiências, compartilhar o love love, fazer um bulkingzão, vem ser o leg do meu press;<br />
       <br /><br />
       Mas só queria te dizer:<br />
       Jeh, meu sentimento por você só cresce e cresce a cada dia;<br />
@@ -40,21 +40,12 @@
       </span>
     </div>
 
-    <div id="loveHeart">
-      <canvas id="garden"></canvas>
-      <div id="words">
-        <div id="messages">
+    <div id="loveHeart" style="position: relative;">
+      <canvas id="garden" style="width: 100%; height: auto;"></canvas>
+      <div id="words" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <div id="messages" style="font-size: 1.2rem; color: #f06;">
           Nosso amor para sempre 💞
           <div id="elapseClock"></div>
         </div>
-        <div id="loveu">
-          TE AMO<br/>
-          <div class="signature">- Dudu</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>
+        <div id="loveu" style="font-size: 1rem; color: #333;
+
