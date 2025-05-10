@@ -1,5 +1,4 @@
 ﻿$(function () {
-    // Setup do jardim
     $loveHeart = $("#loveHeart");
     var offsetX = $loveHeart.width() / 2;
     var offsetY = $loveHeart.height() / 2 - 55;
@@ -11,37 +10,33 @@
     gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
 
-    // Ajusta o conteúdo para centralizar
     $("#content").css("width", $loveHeart.width() + $("#code").width());
     $("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
     $("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
     $("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
 
-    // Loop de renderização
     setInterval(function () {
         garden.render();
     }, garden.options.growSpeed);
 });
 
-// Ajusta o tamanho do canvas ao redimensionar a janela
 $(window).resize(function () {
     var newWidth = $(window).width();
     var newHeight = $(window).height();
     if (newWidth !== clientWidth || newHeight !== clientHeight) {
-        location.reload(); // Recarrega a página para ajustar elementos
+        location.reload(); 
     }
 });
 
-// Função para animar o coração
+//  animar o coração
 function startHeartAnimation() {
-    var interval = 50; // Intervalo entre animações
+    var interval = 50;
     var angle = 10;
     var heart = [];
     var animationTimer = setInterval(function () {
         var bloom = getHeartPoint(angle);
         var draw = true;
 
-        // Verifica se há colisão com outras flores
         for (var i = 0; i < heart.length; i++) {
             var p = heart[i];
             var distance = Math.sqrt(Math.pow(p[0] - bloom[0], 2) + Math.pow(p[1] - bloom[1], 2));
@@ -53,19 +48,19 @@ function startHeartAnimation() {
 
         if (draw) {
             heart.push(bloom);
-            garden.createRandomBloom(bloom[0], bloom[1]); // Cria uma flor no ponto calculado
+            garden.createRandomBloom(bloom[0], bloom[1]); 
         }
 
         if (angle >= 30) {
-            clearInterval(animationTimer); // Para a animação ao atingir o limite
+            clearInterval(animationTimer);
             showMessages();
         } else {
-            angle += 0.2; // Incrementa o ângulo
+            angle += 0.2; 
         }
     }, interval);
 }
 
-// Calcula os pontos do coração para criar flores
+
 function getHeartPoint(angle) {
     var t = angle / Math.PI;
     var x = 19.5 * (16 * Math.pow(Math.sin(t), 3));
@@ -73,5 +68,4 @@ function getHeartPoint(angle) {
     return [offsetX + x, offsetY + y];
 }
 
-// Chama a animação do coração
 startHeartAnimation();
