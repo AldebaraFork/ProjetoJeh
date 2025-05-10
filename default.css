@@ -1,0 +1,97 @@
+﻿/* CSS Geral */
+body {
+    background: #fff;
+    font-family: "Courier New", Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+#mainDiv {
+    width: 100%;
+    height: 100vh; /* Usa 100% da altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 10px;
+}
+
+#loveHeart {
+    position: relative;
+    width: 90%; /* Torna o coração mais responsivo */
+    max-width: 600px; /* Limita o tamanho máximo */
+    height: auto;
+    margin: 0 auto;
+}
+
+#garden {
+    width: 100%;
+    height: 100%;
+}
+
+#words {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px; /* Dá um pouco de espaçamento para o texto */
+}
+
+#messages {
+    font-size: 2rem; /* Ajuste de fonte */
+    color: #f06;
+    word-wrap: break-word; /* Garante que o texto não saia da tela */
+}
+
+.signature {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 600px) {
+    #messages {
+        font-size: 1.5rem; /* Reduz o tamanho da fonte para telas pequenas */
+    }
+
+    .signature {
+        font-size: 0.9rem; /* Diminui um pouco a assinatura */
+    }
+
+    #loveHeart {
+        width: 100%; /* Preenche toda a largura em telas pequenas */
+    }
+
+    #messages {
+        font-size: 1.2rem; /* Ajuste de tamanho de fonte */
+    }
+}
+#heartspan a {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+#heartspan a:hover #icon {
+    transform: scale(1.2); /* Aumenta o coração ao passar o mouse */
+    color: #ff5c8e; /* Altera a cor ao passar o mouse */
+}
+
+#icon {
+    font-size: 4rem; /* Aumenta o tamanho do coração */
+    color: #ff3b5c;
+    cursor: pointer; /* Indica que é clicável */
+}
+
+#icon:active {
+    transform: scale(0.9); /* Efeito ao pressionar o ícone */
+}
+
+#mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que a altura mínima seja 100% da tela */
+    background-color: #f7f7f7;
+    padding: 10px;
+}
